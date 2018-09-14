@@ -118,7 +118,7 @@ xFunc.addprize = function(args, message) {
 	 	message.channel.send("new prize added: "+prizename);
 	 	message.channel.send("quantity: "+prizeqty);
 
-	 	// priceholding.push(new Array(prizename, prizeqty) );
+	 	prizeholding.push(new Array(prizename, prizeqty) );
 
 
 	 }
