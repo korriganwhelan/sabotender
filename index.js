@@ -20,6 +20,7 @@ trialroulette.trial.sort(function() {
 	return .5-Math.random();
 });
 
+prizeholding = prizes.prizes;
 
 
 
@@ -95,11 +96,19 @@ bot.login(process.env.TOKEN);
 
 
 xFunc.roll = function(args, message) {
-    rollnumber = Math.ceil(Math.random()*4);
-     message.channel.send("You rolled a :game_die: **"+rollnumber+"**");
+   
+     message.channel.send("Sucessfully resetted the prizelist");
 
 
 }
+
+xFunc.resetprizes = function(args, message) {    
+     message.channel.send("You rolled a :game_die: **"+rollnumber+"**");
+     prizeholding = prizes.prizes;
+
+
+}
+
 
 xFunc.prize = function(args, message) {
     prizelength = prizes.prizes.length;
