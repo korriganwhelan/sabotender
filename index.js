@@ -96,18 +96,27 @@ bot.login(process.env.TOKEN);
 
 
 xFunc.roll = function(args, message) {
-   
-     message.channel.send("Sucessfully resetted the prizelist");
+   	rollnumber = Math.ceil(Math.random()*4);
+    message.channel.send("You rolled a :game_die: **"+rollnumber+"**");
 
 
 }
 
 xFunc.resetprizes = function(args, message) {    
-     message.channel.send("You rolled a :game_die: **"+rollnumber+"**");
+     message.channel.send("Sucessfully resetted the prizelist");
      prizeholding = prizes.prizes;
 
 
 }
+
+xFunc.addprize = function(args, message) {  
+	 let prizename = message.content.split(args[1])[1].trim();
+     message.channel.send("new prize added: "+prizename);
+     
+
+
+}
+
 
 
 xFunc.prize = function(args, message) {
@@ -118,18 +127,18 @@ xFunc.prize = function(args, message) {
 
 
     if (prizes.prizes === undefined || prizes.prizes.length == 0) {
-            message.channel.send("You won a prize, but sadly there are no prizes left...");
+            message.channel.send(":confetti_ball: You won a prize, but sadly there are no prizes left...");
 
         }
 
     else {
-        message.channel.send("You won a prize! It is...");
-        message.channel.send("**"+prizes.prizes[rollprize][0]+"**");
+        message.channel.send("You won a prize! It is...**"+prizes.prizes[rollprize][0]+"**");
+        
         prizes.prizes[rollprize][1]--;
             
             
         if (prizes.prizes[rollprize][1] == 0) {
-            message.channel.send("no more");
+            
             prizes.prizes.splice(rollprize, 1);
 
         }
