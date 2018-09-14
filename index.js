@@ -79,7 +79,7 @@ if(message.content.startsWith(config.prefix)) {
 
 });
 
-bot.login(config.token);
+bot.login(process.env.TOKEN);
 
 
 
