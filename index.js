@@ -92,7 +92,20 @@ bot.login(process.env.TOKEN);
 // console.log('The value of PORT is:', process.env.PORT);
 
 
+xFunc.whostarts = function(args, message) {
+   	whostartsroll = Math.round(Math.random());
 
+   	if (whostartsroll == 0) {
+	    message.channel.send("Team :a: will Start!");
+   	}
+   	else {
+   		message.channel.send("Team :b: will start!");
+
+   	}
+
+
+
+}
 
 
 xFunc.roll = function(args, message) {
@@ -134,33 +147,46 @@ xFunc.addprize = function(args, message) {
 
 
 
-xFunc.prize = function(args, message) {
+xFunc.whoshots = function(args, message) {
     prizelength = prizes.prizes.length;
 
-    rollprize = Math.floor(Math.random()*prizelength);
 
+    whoshotroll = Math.round(Math.random());
 
-
-    if (prizes.prizes === undefined || prizes.prizes.length == 0) {
-            message.channel.send(":confetti_ball: You won a prize, but sadly there are no prizes left...");
-
-        }
-
-    else {
-        message.channel.send("You won a prize! It is...**"+prizes.prizes[rollprize][0]+"**");
-        
-        prizes.prizes[rollprize][1]--;
-            
-            
-        if (prizes.prizes[rollprize][1] == 0) {
-            
-            prizes.prizes.splice(rollprize, 1);
-
-        }
-        
-            
+    if (whoshotroll == 0) {
+    	message.channel.send(":skull: You lose! Take a double Shot");
 
     }
+
+    else {
+	    rollprize = Math.floor(Math.random()*prizelength);
+
+
+	    if (prizes.prizes === undefined || prizes.prizes.length == 0) {
+	            message.channel.send("You won a prize, but sadly there are no prizes left... At least your opponent takes a shot, right?");
+
+	        }
+
+	    else {
+	        message.channel.send(":confetti_ball: You won a prize! It is: **"+prizes.prizes[rollprize][0]+"**");
+	        message.channel.send("And your opponent takes a shot :rofl:");
+	        
+	        prizes.prizes[rollprize][1]--;
+	            
+	            
+	        if (prizes.prizes[rollprize][1] == 0) {
+	            
+	            prizes.prizes.splice(rollprize, 1);
+
+	        }
+	        
+	            
+
+	    }
+    	
+    }
+
+
     
 
 }
