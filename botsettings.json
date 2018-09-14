@@ -1,4 +1,4 @@
 {
-   "token": "NDg5ODU3ODg2NDMyOTE5NTYx.Dnw5fg.Skd6tnhhq1iucxKoy-yvn-6TNNU",
+   "token": process.env.TOKEN,
    "prefix": "!sabo"
 }
