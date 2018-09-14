@@ -111,9 +111,9 @@ xFunc.resetprizes = function(args, message) {
 
 xFunc.addprize = function(args, message) {  
 	 let newprize = message.content.split(args[1])[1].trim();
-	 if(newprize.indexOf(',')) {
-	 	let prizename = newprize.split(',')[0];
-	 	let prizeqty = newprize.split(',')[1];
+	 if(newprize.indexOf(",") > -1) {
+	 	let prizename = newprize.split(",")[0];
+	 	let prizeqty = newprize.split(",")[1].trim();
 
 	 	message.channel.send("new prize added: "+prizename);
 	 	message.channel.send("quantity: "+prizeqty);
