@@ -110,8 +110,21 @@ xFunc.resetprizes = function(args, message) {
 }
 
 xFunc.addprize = function(args, message) {  
-	 let prizename = message.content.split(args[1])[1].trim();
-     message.channel.send("new prize added: "+prizename);
+	 let newprize = message.content.split(args[1])[1].trim();
+	 if(newprize.indexOf(',')) {
+	 	let prizename = newprize.split(',')[0];
+	 	let prizeqty = newprize.split(',')[1];
+
+	 	message.channel.send("new prize added: "+prizename);
+	 	message.channel.send("quantity: "+prizeqty);
+
+
+	 }
+	 else {
+	 	message.channel.send("Excuse me, but you need to tell me how many. **E.g. !sabo addprize Potion, 10**");
+
+	 }
+     
      
 
 
