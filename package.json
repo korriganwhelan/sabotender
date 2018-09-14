@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "start": "micro"
-  },
-  "dependencies": {
-    "micro": "latest"
-  }
-}
