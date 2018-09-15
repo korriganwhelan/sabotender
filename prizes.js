@@ -24,7 +24,7 @@ prizes[21]= new Array("Lesser Panda",1);
 prizes[22]= new Array("Pagos Bandana",1);
 prizes[23]= new Array("Glazenut",3);
 prizes[24]= new Array("A Blank; You take a Shot as well;",5);
-prizes[25]= new Array("Everyone takes a shot, but you and the person already lost",5);
+prizes[25]= new Array("Everyone,but you and the person already lost, takes a shot",5);
 prizes[26]= new Array("Everyone drinks, including you and the loser",5);
 
 module.exports.prizes =prizes;
